@@ -1,0 +1,110 @@
+@charset "utf-8";
+
+/*
+	common.css
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+/* common
+--------------------------------------------------------------------------------------------------------*/
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+em { font-style: normal;}
+a { text-decoration: none; color: inherit;}
+textarea { resize: vertical;}
+img { vertical-align: bottom;}
+
+.pc-block { display: block!important;}
+.sp-block { display: none!important;}
+.pc-inlineblock { display: inline-block!important;}
+.sp-inlineblock { display: none!important;}
+
+iframe[name='google_conversion_frame'] {
+	position: absolute;
+	top: 0;
+}
+
+/* clear
+--------------------------------------------------------------------------------------------------------*/
+.clear::after {
+	content: '.';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clear { display: inline-block;}
+/* exlude MacIE5 \*/
+* html .clear { height: 1%;}
+.clear { display: block;}
+/* end MacIE5 */
+
+/* font-size
+--------------------------------------------------------------------------------------------------------*/
+html { font-size: 62.5%;}
+body {
+	font-size: 16px;
+	font-size: 1.6rem;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: subpixel-antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* input
+--------------------------------------------------------------------------------------------------------*/
+input[type=text], input[type=password], input[type=checkbox], input[type=email],input[type=radio], input[type=submit], input[type=button],
+select, textarea {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "游ゴシック", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
+	border: none;
+	outline: 0;
+}
+
+/* body
+--------------------------------------------------------------------------------------------------------*/
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "游ゴシック", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
+	font-weight: 400;
+	line-height: 1.0;
+	background-color: #fff;
+	color: #525252;
+}
+
+
+/* img opacity
+--------------------------------------------------------------------------------------------------------*/
+a.opacity {
+	display: block;
+}
+a.opacity img {
+	-webkit-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+a.opacity:hover img {
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+
+
+
+/*
+	less than 767px;
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+/* common
+--------------------------------------------------------------------------------------------------------*/
+	.pc-block { display: none!important;}
+	.sp-block { display: block!important;}
+	.pc-inlineblock { display: none!important;}
+	.sp-inlineblock { display: inline-block!important;}
+
+	img { max-width: 100%; height: auto;}
+
+
+/*
+	common.css End
+---------------------------------------------------------------------------------------------------------------------------------------------*/
+}
