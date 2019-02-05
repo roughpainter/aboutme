@@ -1,6 +1,5 @@
 /* function.js
 --------------------------------------------------------------------------------------------------------*/
-jQuery(function() {
-
-
+jQuery(window).load(function() {
+	$('#main-visual li').addClass('active');
 });

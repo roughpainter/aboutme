@@ -25,20 +25,6 @@ iframe[name='google_conversion_frame'] {
 	top: 0;
 }
 
-/* clear
---------------------------------------------------------------------------------------------------------*/
-.clear::after {
-	content: '.';
-	display: block;
-	clear: both;
-	height: 0;
-	visibility: hidden;
-}
-.clear { display: inline-block;}
-/* exlude MacIE5 \*/
-* html .clear { height: 1%;}
-.clear { display: block;}
-/* end MacIE5 */
 
 /* font-size
 --------------------------------------------------------------------------------------------------------*/
@@ -67,7 +53,7 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "游ゴシック", YuGothic, Arial, "メイリオ", Meiryo, sans-serif;
 	font-weight: 400;
 	line-height: 1.0;
-	background-color: #fff;
+	background-color: #000;
 	color: #525252;
 }
 
