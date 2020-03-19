@@ -15,13 +15,18 @@
 	-webkit-justify-content: space-between;
 }
 #main-visual .inner ul li {
-	flex: 0 0 25%;
-	-webkit-flex: 0 0 25%;
+	flex: 0 0 25.0%;
+	-webkit-flex: 0 0 25.0%;
+	width: 25.0%;
 	height: 100vh;
 	position: relative;
 	transition: all 0.8s ease;
 	-webkit-transition: all 0.8s ease;
 	overflow: hidden;
+}
+#main-visual .inner ul li * {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 #main-visual .inner ul li img {
 	position: absolute;
@@ -30,12 +35,16 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	transition: all 0.6s ease;
-	-webkit-transition: all 0.6s ease;
-	filter: grayscale(90%) contrast(130%) brightness(70%);
-	-webkit-filter: grayscale(90%) contrast(130%) brightness(70%);
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
+	transition: all 0.6s cubic-bezier(0.5, 0, 0.35, 1);
+	-webkit-transition: all 0.6s cubic-bezier(0.5, 0, 0.35, 1);
+	filter: grayscale(0) contrast(115%) brightness(100%);
+	-webkit-filter: grayscale(0) contrast(115%) brightness(100%);
+}
+#main-visual .inner ul li a:hover img {
+	transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+	filter: grayscale(90%) contrast(130%) brightness(70%) blur(4px);
+	-webkit-filter: grayscale(90%) contrast(130%) brightness(70%) blur(4px);
 }
 #main-visual .inner ul li a {
 	width: 100%;
@@ -47,31 +56,28 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
+	font-size: 2.0rem;
 	display: inline-block;
 	text-align: center;
 	transform: translate(-50%, -50%);
 	-webkit-transform: translate(-50%, -50%);
-}
-#main-visual .inner ul li a::after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.4);
 	transition: all 0.6s ease;
 	-webkit-transition: all 0.6s ease;
+	opacity: 0;
+	font-size: 2.8125vw;
+	font-weight: 700;
+	color: #fff;
 }
-#main-visual .inner ul li a:hover::after {
-	background-color: transparent;
+#main-visual .inner ul li a span i {
+	display: block;
+	text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
-#main-visual .inner ul li a:hover img {
-	transform: scale(1.08);
-	-webkit-transform: scale(1.08);
-	filter: grayscale(0) contrast(115%) brightness(100%);
-	-webkit-filter: grayscale(0) contrast(115%) brightness(100%);
+#main-visual .inner ul li a:hover span {
+	opacity: 1.0;
 }
+
+
+
 
 #main-visual .inner ul li:nth-of-type(2n) { transform: translate(0, 100%); -webkit-transform: translate(0, 100%);}
 #main-visual .inner ul li:nth-of-type(2n+1) { transform: translate(0, -100%); -webkit-transform: translate(0, -100%);}
@@ -82,10 +88,18 @@
 #main-visual .inner ul li:nth-of-type(3) { transition-delay: 0.6s; -webkit-transition-delay: 0.6s;}
 #main-visual .inner ul li:nth-of-type(4) { transition-delay: 0.9s; -webkit-transition-delay: 0.9s;}
 
+#main-visual .inner ul li img.object-fit {
+	object-fit: cover;
+	font-family: 'object-fit: cover;'
+}
+
+
 /*
 	less than 1280px;
 ---------------------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 1280px) {
+/* main-visual
+--------------------------------------------------------------------------------------------------------*/
 	#main-visual .inner ul {
 		flex-wrap: wrap;
 		-webkit-flex-wrap: wrap;
@@ -99,7 +113,7 @@
 	#main-visual .inner ul li:nth-of-type(2n+1) { transform: translate(0, 0); -webkit-transform: translate(0, 0);}
 	#main-visual .inner ul li { opacity: 0;}
 	#main-visual .inner ul li.active { opacity: 1.0;}
-	
+	#main-visual .inner ul li a span { font-size: 4.375vw;}
 }
 
 
@@ -107,13 +121,14 @@
 	less than 767px;
 ---------------------------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 767px) {
-/* style
+/* main-visual
 --------------------------------------------------------------------------------------------------------*/
 	#main-visual .inner ul li {
 		flex: 0 0 100%;
 		-webkit-flex: 0 0 100%;
 		height: 25vh;
 	}
+		#main-visual .inner ul li a span { font-size: 5.625vw;}
 
 /*
 	common.css End
